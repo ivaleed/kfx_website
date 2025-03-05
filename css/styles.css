@@ -341,24 +341,24 @@ Sidebar
 
 .custom-logo-bata {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 70px;
   background: url("../images/bata.svg") no-repeat center;
   background-size: contain;
 }
 
 .custom-logo-jhondegree {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 70px;
   background: url("../images/logo-john-deere.svg") no-repeat center;
   background-size: contain;
 }
 
 .custom-logo-reliance {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+   width: 65px;
+  height: 70px;
   background: url("../images/Reliance\ Power.svg") no-repeat center;
   background-size: contain;
 }
@@ -411,7 +411,18 @@ Hero
   color: var(--clr-grey-5);
 }
 .hero-icons {
-  justify-items: start;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  gap: 30px;
+  white-space: nowrap;
+  width: 100%;
+  margin-left:0px;
+
 }
 .hero-btn {
   margin-top: 1.25rem;
@@ -880,11 +891,12 @@ Blog
   background: var(--clr-grey-10);
 }
 .card {
-  height: 27rem;
+  height: 35rem;
   position: relative;
   /* talk later */
   -webkit-perspective: 1500px;
   perspective: 1500px;
+
 }
 .card-side {
   -webkit-transition: all 2s linear;
@@ -919,6 +931,13 @@ Blog
     -webkit-transform: rotateY(0);
     transform: rotateY(0);
   }
+}
+@media screen and (max-width: 768px) {
+  .card {
+    min-height: 32rem;
+    height: auto;
+  }
+
 }
 /* rest of the styles */
 .card-info {
