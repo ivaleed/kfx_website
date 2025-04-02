@@ -357,7 +357,7 @@ Sidebar
 
 .custom-logo-reliance {
   display: inline-block;
-   width: 65px;
+  width: 65px;
   height: 70px;
   background: url("../images/Reliance\ Power.svg") no-repeat center;
   background-size: contain;
@@ -406,6 +406,13 @@ Hero
   min-height: calc(100vh - 5rem);
   display: grid;
   place-items: center;
+  overflow: hidden;
+  width: 100%;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: normal;
+  padding: 0 1rem;
+  grid-template-rows: auto auto;
 }
 .hero-info h4 {
   color: var(--clr-grey-5);
@@ -414,16 +421,25 @@ Hero
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   list-style: none;
-  padding: 0;
-  margin-top: 20px;
+  margin-top: 10px;
   gap: 30px;
-  white-space: nowrap;
+  white-space: normal;
   width: 100%;
-  margin-left:0px;
-
 }
+.trusted-clients {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.trusted-clients h5 {
+  font-size: 1.25 rem;
+  font-weight: bold;
+}
+
 .hero-btn {
   margin-top: 1.25rem;
 }
@@ -433,7 +449,25 @@ Hero
     position: relative;
   }
   .hero-center {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .hero-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-icons {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .trusted-clients {
+    margin-bottom: 10px;
+    justify-content: flex-start;
   }
 
   .hero-img::before,
@@ -461,6 +495,20 @@ Hero
     100% {
       border-image-source: linear-gradient(360deg, #62c2e4, #62a4cb, #5c8ccb);
     }
+  }
+}
+@media screen and (max-width: 767px) {
+  .hero-icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    gap: 10px;
+    white-space: normal;
+    width: 100%;
   }
 }
 .hero-photo {
@@ -896,7 +944,6 @@ Blog
   /* talk later */
   -webkit-perspective: 1500px;
   perspective: 1500px;
-
 }
 .card-side {
   -webkit-transition: all 2s linear;
@@ -937,7 +984,6 @@ Blog
     min-height: 32rem;
     height: auto;
   }
-
 }
 /* rest of the styles */
 .card-info {
